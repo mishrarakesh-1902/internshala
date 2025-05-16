@@ -1,0 +1,21 @@
+const express = require("express");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const connectDB = require("./config/db");
+const app = express();
+const authRoutes = require('./routes/auth');
+const listRoutes = require("./routes/list");
+const uploadRoutes = require('./routes/upload');
+
+dotenv.config();
+connectDB();
+app.use(cors());
+app.use(express.json());
+app.use(express.json());
+app.use('/api/auth', authRoutes);
+app.use("/api/auth", require("./routes/auth"));
+app.use("/api/agents", require("./routes/agents"));
+app.use("/api/upload", require("./routes/upload"));
+app.use('/api', uploadRoutes);
+app.use("/api/lists", listRoutes);
+app.listen(process.env.PORT, () => console.log("Server running"));
