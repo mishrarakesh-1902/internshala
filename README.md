@@ -1,70 +1,123 @@
-# Getting Started with Create React App
+# 📊 MERN Stack CSV Upload and Agent Distribution System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a full-stack MERN (MongoDB, Express, React, Node.js) web application that allows:
+- 🧑‍💼 Admin login
+- 👥 Agent management
+- 📁 CSV upload of leads/contacts
+- 🔄 Automatic distribution of leads among agents
+- 📋 Viewing distributed leads
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- Secure admin authentication (login)
+- Add/manage agents
+- Upload CSV files containing contact information
+- Automatically distribute contacts evenly among agents
+- Fetch and display distributed data with agent assignment
+- Basic UI built with React.js
+- Backend built with Express.js and MongoDB
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🗂 Project Structure
 
-### `npm test`
+internshal_project/
+│
+├── backend/ # Express + MongoDB backend
+│ ├── models/ # Mongoose models for List and Agent
+│ │ ├── Agent.js
+│ │ └── List.js
+│ ├── routes/ # API routes
+│ │ ├── auth.js # Login route
+│ │ ├── agents.js # Agent management
+│ │ └── upload.js # CSV upload & distribution logic
+│ ├── middleware/
+│ │ └── auth.js # JWT authentication middleware
+│ └── server.js # Main entry point of backend
+│
+├── frontend/ # React frontend
+│ ├── src/
+│ │ ├── components/ # Reusable UI components
+│ │ ├── pages/ # Login, Upload, Agent List pages
+│ │ ├── App.js
+│ │ └── index.js
+│ └── package.json
+│
+└── README.md # You're reading it 🙂
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ⚙️ Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Frontend**: React.js, Axios, Tailwind CSS / Bootstrap (if used)
+- **Backend**: Node.js, Express.js, MongoDB, Mongoose
+- **Authentication**: JSON Web Tokens (JWT)
+- **File Upload & Parsing**: Multer, csv-parser
+- **Database**: MongoDB Atlas / Local MongoDB
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📦 Installation & Setup
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Prerequisites
+- Node.js and npm
+- MongoDB installed locally or MongoDB Atlas account
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Clone the Repository
+```bash
+git clone https://github.com/your-username/internshal_project.git
+cd internshal_project
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Backend Setup
+cd backend
+npm install
+# Create .env file
+touch .env
 
-## Learn More
+==.env file structure:==
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+====Then run:==
+node server.js
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+=====Frontend Setup======
+cd ../frontend
+npm install
+npm start
 
-### Analyzing the Bundle Size
+===CSV Upload Format=====
+firstName,phone,notes
+Ravi,9876543210,Interested in product
+Priya,9123456789,Call later
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+===============
+ Future Improvements
+Pagination and search for large CSV files
 
-### Advanced Configuration
+Role-based user management
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Download distributed lists
 
-### Deployment
+Email notification to agents
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+
+
+
+
+
+
