@@ -22,7 +22,7 @@ This is a full-stack MERN (MongoDB, Express, React, Node.js) web application tha
 ---
 
 ## 🗂 Project Structure
-
+```
 internshal_project/
 │
 ├── backend/ # Express + MongoDB backend
@@ -46,7 +46,7 @@ internshal_project/
 │ └── package.json
 │
 └── README.md # You're reading it 🙂
-
+```
 
 
 
